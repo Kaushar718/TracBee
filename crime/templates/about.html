@@ -1,0 +1,233 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About TracBee | Skill Intelligence Platform</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'about.css' %}">
+    <link rel="stylesheet" href="{% static 'tracbee-theme.css' %}">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="/home/" class="logo">
+            <span></span> TracBee
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="/home/">Home</a></li>
+            <li><a href="/analysis/">Analysis</a></li>
+            <li><a href="/about/" class="active">About</a></li>
+        </ul>
+
+        <a href="/analysis/" class="nav-button">Explore Analytics</a>
+    </div>
+</nav>
+
+<main>
+
+    <!-- HERO -->
+    <section class="about-hero">
+        <div class="hero-content">
+            <span class="eyebrow">ABOUT TRACBEE</span>
+
+            <h1>
+                Understand Skills.<br>
+                <span>Discover Opportunities.</span>
+            </h1>
+
+            <p>
+                Make smarter career decisions with skill demand insights,
+                job market information, and data-driven analysis.
+            </p>
+
+            <a href="/analysis/" class="primary-button">
+                Explore Skill Analytics →
+            </a>
+        </div>
+
+        <div class="hero-visual">
+            <div class="visual-card">
+                <div class="visual-icon">📊</div>
+                <h3>Skill Intelligence</h3>
+                <p>Turn job market data into meaningful insights.</p>
+
+                <div class="visual-stat">
+                    <span>Data-driven insights</span>
+                    <strong>✓</strong>
+                </div>
+                <div class="visual-stat">
+                    <span>Skill demand analysis</span>
+                    <strong>✓</strong>
+                </div>
+                <div class="visual-stat">
+                    <span>Career exploration</span>
+                    <strong>✓</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="section">
+        <div class="section-heading">
+            <span class="eyebrow">WHO WE ARE</span>
+            <h2>Making Skill Intelligence Easier</h2>
+            <p>
+                TracBee helps learners and professionals understand
+                which skills appear in job postings and explore career opportunities.
+            </p>
+        </div>
+
+        <div class="intro-grid">
+            <article class="info-card">
+                <div class="info-icon">🎯</div>
+                <h3>Our Mission</h3>
+                <p>
+                    Our mission is to make skill demand information easier
+                    to understand, helping people make informed learning
+                    and career decisions.
+                </p>
+            </article>
+
+            <article class="info-card">
+                <div class="info-icon">🚀</div>
+                <h3>Our Vision</h3>
+                <p>
+                    We aim to build a useful skill intelligence platform
+                    that connects learning goals with insights from
+                    available job market data.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features-section">
+        <div class="section-heading">
+            <span class="eyebrow">WHAT WE OFFER</span>
+            <h2>Explore TracBee Features</h2>
+            <p>
+                Useful tools to explore skills and understand job posting data.
+            </p>
+        </div>
+
+        <div class="feature-grid">
+
+            <article class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h3>Skill Demand Analysis</h3>
+                <p>
+                    Explore how frequently different skills appear
+                    in the available job posting dataset.
+                </p>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon">📍</div>
+                <h3>Location Insights</h3>
+                <p>
+                    Filter job posting data by location and discover
+                    skills appearing in regional opportunities.
+                </p>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Visual Analytics</h3>
+                <p>
+                    Understand skill demand through charts,
+                    statistics, and dynamic insights.
+                </p>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon">🔎</div>
+                <h3>Skill Exploration</h3>
+                <p>
+                    Focus on specific technologies and examine
+                    their representation in matching job postings.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- WHY TRACBEE -->
+    <section class="section why-section">
+        <div class="why-content">
+            <span class="eyebrow">WHY TRACBEE?</span>
+            <h2>Turn Information Into Better Decisions.</h2>
+            <p>
+                Choosing what to learn can be confusing.
+                TracBee provides an organized way to explore
+                available job posting information and identify
+                skills worth researching further.
+            </p>
+
+            <a href="/analysis/" class="primary-button">
+                Start Exploring →
+            </a>
+        </div>
+
+        <div class="why-points">
+            <div class="why-item">
+                <span>01</span>
+                <div>
+                    <h3>Understand Demand</h3>
+                    <p>Explore skills appearing in job postings.</p>
+                </div>
+            </div>
+
+            <div class="why-item">
+                <span>02</span>
+                <div>
+                    <h3>Compare Opportunities</h3>
+                    <p>Use location and skill filters to explore data.</p>
+                </div>
+            </div>
+
+            <div class="why-item">
+                <span>03</span>
+                <div>
+                    <h3>Plan Your Learning</h3>
+                    <p>Use insights to guide further research and learning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <span class="eyebrow">YOUR NEXT STEP STARTS HERE</span>
+        <h2>Ready to Explore In-Demand Skills?</h2>
+        <p>
+            Discover available skill demand data and explore
+            opportunities with TracBee.
+        </p>
+
+        <a href="/analysis/" class="cta-button">
+            Explore Analytics →
+        </a>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <a href="/home/" class="footer-logo">TracBee</a>
+        <p>Skill Demand Analyzer</p>
+        <span>© 2026 TracBee. All rights reserved.</span>
+    </div>
+</footer>
+
+</body>
+</html>

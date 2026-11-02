@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #111;
+  color: white;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.logo-box {
+  width: 32px;
+  height: 32px;
+  background: #23c36a;;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  opacity: 1;
+}
+
+/* Right Button */
+.nav-btn .btn-primary {
+  background: #23c36a;;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-btn .btn-primary:hover {
+  background:#23c36a;;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  height: 100vh;
+  background: url("https://images.unsplash.com/photo-1504052434569-70ad5836ab65") center/cover no-repeat;
+  display: flex;
+  display: flex;
+  align-items: center;
+  padding: 0 100px;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.681);
+  top: 0;
+  left: 0;
+}
+
+.hero-content {
+  position: relative;
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  opacity: 0.8;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+/* Buttons */
+
+.btn-primary {
+  background: #23c36a;;
+  padding: 14px 26px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #23c36a;;
+}
+
+.btn-outline {
+  border: 1px solid rgba(255,255,255,0.5);
+  padding: 14px 26px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,0.1);
+}

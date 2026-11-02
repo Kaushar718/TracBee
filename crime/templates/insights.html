@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TracBee | Market Intelligence</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'insights.css' %}">
+    <link rel="stylesheet" href="/static/tracbee-theme.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="logo">TracBee</div>
+    <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'analysis' %}">Analysis</a></li>
+        <li><a class="active" href="{% url 'trend' %}">Market Intelligence</a></li>
+    </ul>
+</nav>
+
+<section class="intelligence-section">
+    <div class="intelligence-header">
+        <h2>Market Intelligence Brief</h2>
+        <p>
+            Deep insights into workforce evolution — analyzing where talent grows, how pay shifts, 
+            and which technologies shape the future of India's digital economy.
+        </p>
+    </div>
+
+    <div class="intelligence-layout">
+        <!-- LEFT PANEL -->
+        <div class="intelligence-nav">
+            <div class="nav-item active">01. Hiring Hotspots</div>
+            <div class="nav-item">02. Compensation Trends</div>
+            <div class="nav-item">03. Growth Forecast</div>
+            <div class="nav-item">04. Risk Assessment</div>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="intelligence-content">
+
+            <!-- Hiring Hotspots -->
+            <div class="content-block active">
+                <h3>Hiring Hotspots</h3>
+                <p>{{ top_city }} continues to lead national hiring expansion, fueled by AI innovation and enterprise transformation.</p>
+                <ul>
+                    <li><strong>Delhi NCR:</strong> FinTech & analytics startups +27% YoY growth; AI policy roles surging.</li>
+                    <li><strong>Bengaluru:</strong> 38% of India’s tech openings — automation, SaaS, and full-stack dominance.</li>
+                    <li><strong>Hyderabad:</strong> +19% YoY hiring in cybersecurity & cloud data management.</li>
+                    <li><strong>Pune & Chennai:</strong> Stable backend & DevOps hiring; product engineering rise.</li>
+                    <li><strong>Tier-2 Cities:</strong> Jaipur, Kochi, Indore up 18% as hybrid work decentralizes hiring.</li>
+                </ul>
+                <p><em>Hiring activity expected to rise steadily through FY27, led by AI and digital finance sectors.</em></p>
+            </div>
+
+            <!-- Compensation Trends -->
+            <div class="content-block">
+                <h3>Compensation Trends</h3>
+                <p>High-skill tech domains show double-digit salary growth; traditional IT salaries plateau amid automation.</p>
+                <ul>
+                    <li><strong>AI / ML Engineers:</strong> +22% YoY (₹26–30 LPA avg); product AI adoption drives demand.</li>
+                    <li><strong>Cybersecurity Analysts:</strong> +18%; compliance & data-privacy laws boosting hiring.</li>
+                    <li><strong>DevOps / Cloud Leads:</strong> ₹28–₹35 LPA; flexible, bonus-tied packages trending.</li>
+                    <li><strong>Blockchain Developers:</strong> +30% niche demand surge in Web3, DeFi, logistics tech.</li>
+                    <li><strong>Entry-Level Coders:</strong> ₹4–₹6 LPA; high supply suppressing wage growth.</li>
+                </ul>
+                <p><strong>Regional Pay Gaps:</strong> Delhi & Mumbai 20% above Tier-2 cities; stabilization expected Q3 2026.</p>
+            </div>
+
+            <!-- Growth Forecast -->
+            <div class="content-block">
+                <h3>Growth Forecast</h3>
+                <p>India’s digital economy projected to grow at <strong>14.6% CAGR</strong> through FY27, driven by AI, cloud, and analytics.</p>
+                <ul>
+                    <li><strong>Data Analytics:</strong> 17% CAGR; top demand in retail, healthcare, & finance.</li>
+                    <li><strong>Cybersecurity:</strong> $4.3B industry by 2027; 19% YoY hiring growth.</li>
+                    <li><strong>AI / Automation:</strong> +40,000 new roles by 2027 with Gen-AI expansion.</li>
+                    <li><strong>FinTech:</strong> 16% annual growth; Python & blockchain key skills.</li>
+                    <li><strong>Green Tech:</strong> +25% new hiring in smart manufacturing sectors.</li>
+                </ul>
+                <p><em>Tier-2 cities to contribute over 20% of net new jobs as digital hubs decentralize.</em></p>
+            </div>
+
+            <!-- Risk Assessment -->
+            <div class="content-block">
+                <h3>Risk Assessment</h3>
+                <p>Digital acceleration brings workforce volatility — automation, regulation, and talent clustering drive risk exposure.</p>
+                <ul>
+                    <li><strong>Automation Risk:</strong> Routine roles down 35–45% by 2028.</li>
+                    <li><strong>Skill Decay:</strong> Legacy tech hiring -8% YoY as modernization accelerates.</li>
+                    <li><strong>Attrition:</strong> Data/AI roles see >22% annual churn due to global remote options.</li>
+                    <li><strong>Economic Headwinds:</strong> Global slowdown may trim 5% export IT hiring budgets.</li>
+                    <li><strong>Talent Clustering:</strong> 70% AI engineers in 3 metros = retention & cost challenges.</li>
+                </ul>
+                <p><strong>Mitigation:</strong> Continuous reskilling, hybrid-skill adoption, and internal mobility programs are key stabilizers.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    © 2026 TracBee | Workforce Intelligence Platform
+</footer>
+
+<script>
+    // Tab logic with fade-slide transitions
+    const navItems = document.querySelectorAll('.nav-item');
+const contentBlocks = document.querySelectorAll('.content-block');
+let currentIndex = 0;
+
+function switchTab(index) {
+  if (index === currentIndex) return;
+
+  const current = contentBlocks[currentIndex];
+  const next = contentBlocks[index];
+
+  // Smooth fade-out of current block
+  current.style.opacity = '0';
+  current.style.transform = 'translateY(30px)';
+  current.style.pointerEvents = 'none';
+  current.classList.remove('active');
+
+  // Wait for fade-out before showing next block
+  setTimeout(() => {
+    next.classList.add('active');
+    next.style.opacity = '1';
+    next.style.transform = 'translateY(0)';
+    next.style.pointerEvents = 'all';
+  }, 150);
+
+  // Update active nav
+  navItems.forEach(nav => nav.classList.remove('active'));
+  navItems[index].classList.add('active');
+
+  currentIndex = index;
+}
+
+// Initialize
+contentBlocks.forEach((b, i) => {
+  if (i !== 0) b.classList.remove('active');
+});
+
+navItems.forEach((item, i) => {
+  item.addEventListener('click', () => switchTab(i));
+});
+</script>
+</body>
+</html>

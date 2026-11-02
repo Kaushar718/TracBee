@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+  <link rel="stylesheet" href="/static/tracbee-theme.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+  <!-- Header -->
+  <header class="dashboard-header">
+    <h1>Activity <span>Dashboard</span></h1>
+  </header>
+
+  <!-- Cards Container -->
+  <div class="cards-container">
+
+    <!-- Login Activity Card -->
+    <div class="card">
+      <h2>Login Activity</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>IP</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for l in logins %}
+            <tr>
+              <td>{{ l.user.username }}</td>
+              <td>{{ l.ip_address }}</td>
+              <td>{{ l.login_time }}</td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="3" class="empty-state">No login activity</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Search Activity Card -->
+    <div class="card">
+      <h2>Recent Searches</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Skill</th>
+              <th>Year</th>
+              <th>Location</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for s in searches %}
+            <tr>
+              <td>{{ s.skill }}</td>
+              <td>{{ s.year }}</td>
+              <td>{{ s.location }}</td>
+              <td>{{ s.timestamp }}</td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="4" class="empty-state">No searches yet</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TracBee | Market Intelligence</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'trend.css' %}">
+    <link rel="stylesheet" href="/static/tracbee-theme.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">🐝 TracBee</div>
+    <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'analysis' %}">Analysis</a></li>
+        <li><a class="active" href="{% url 'trend' %}">Trends</a></li>
+    </ul>
+</nav>
+
+<!-- ================= HERO REPORT PANEL ================= -->
+<section class="report-hero">
+    <h1>Skill Market Intelligence Report {{ year }}</h1>
+    <p>
+        Comprehensive overview of emerging technologies, hiring activity,
+        and workforce demand patterns across India's tech ecosystem.
+    </p>
+</section>
+
+<!-- ================= SKILL GRID ================= -->
+<section class="skill-grid">
+
+    <!-- Growing -->
+    <div class="skill-column">
+        <h2 class="section-title growth">High Growth</h2>
+        {% for skill in growing_skills %}
+        <div class="skill-card growth-border">
+            <h3>{{ skill.name }}</h3>
+            <p>{{ skill.description }}</p>
+            <span class="tag positive">+{{ skill.growth }}% Growth</span>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Stable -->
+    <div class="skill-column">
+        <h2 class="section-title stable">Stable Demand</h2>
+        {% for skill in stable_skills %}
+        <div class="skill-card stable-border">
+            <h3>{{ skill.name }}</h3>
+            <p>{{ skill.description }}</p>
+            <span class="tag neutral">Steady Hiring</span>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Declining -->
+    <div class="skill-column">
+        <h2 class="section-title decline">Declining</h2>
+        {% for skill in declining_skills %}
+        <div class="skill-card decline-border">
+            <h3>{{ skill.name }}</h3>
+            <p>{{ skill.description }}</p>
+            <span class="tag negative">Reduced Demand</span>
+        </div>
+        {% endfor %}
+    </div>
+
+</section>
+
+<!-- ================= MARKET INSIGHT GRID ================= -->
+<section class="insight-grid">
+
+    <!-- Hiring Hotspots -->
+    <div class="insight-card hotspot">
+        <div class="insight-header">
+            <span class="insight-icon">📍</span>
+            <h2>Hiring Hotspots</h2>
+        </div>
+        <p>
+            <strong>{{ top_city }}</strong> remains the dominant hiring hub,
+            followed by Bengaluru and Hyderabad. Startup ecosystems and
+            enterprise digital transformation initiatives are driving
+            regional hiring acceleration.
+        </p>
+    </div>
+
+    <!-- Future Outlook -->
+    <div class="insight-card outlook">
+        <div class="insight-header">
+            <span class="insight-icon">📈</span>
+            <h2>Future Outlook</h2>
+        </div>
+        <p>
+            Market trajectory indicates <strong>{{ market_trend }}</strong>.
+            AI-driven automation, cybersecurity resilience,
+            and cloud-native ecosystems are expected to dominate
+            workforce demand over the next 2–3 years.
+        </p>
+    </div>
+
+</section>
+
+
+<footer class="footer">
+    © 2026 TracBee | Skill Demand Intelligence Platform
+</footer>
+
+</body>
+</html>

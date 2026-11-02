@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to TracBee</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'intro.css' %}">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">
+      <div class="logo-box">T</div>
+      <span>TracBee</span>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#">About</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+      <h1>Everyone is welcome here.</h1>
+      <p>
+        Whether you're exploring skills for the first time or looking
+        for career growth, you belong at TracBee.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="{% url 'home' %}" class="btn-primary">Let's Go →</a>
+        <a href="#" class="btn-outline">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+.signup-text {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.signup-text a.btn-secondary {
+    display: inline-block;
+    padding: 8px 20px;
+    background: transparent;
+    border: 2px solid #23c36a; /* green accent */
+    color: #23c36a;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.signup-text a.btn-secondary:hover {
+    background: #23c36a;
+    color: #fff;
+}

@@ -1,0 +1,153 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | TracBee</title>
+
+    <link rel="stylesheet" href="{% static 'tracbee-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'auth.css' %}">
+</head>
+<body class="auth-body">
+
+<header class="auth-navbar">
+    <a href="/home/" class="auth-brand">
+        <span class="auth-brand-icon">T</span>
+        Trac<span>Bee</span>
+    </a>
+
+    <a href="/home/" class="back-home">← Back to home</a>
+</header>
+
+<main class="auth-main">
+
+    <section class="auth-card signup-card">
+
+        <div class="auth-heading">
+            <div class="auth-icon">✦</div>
+            <p class="auth-eyebrow">GET STARTED</p>
+            <h1>Create your account</h1>
+            <p>Join TracBee and explore your career opportunities.</p>
+        </div>
+
+        {% if error %}
+            <div class="auth-message error-message" role="alert">
+                {{ error }}
+            </div>
+        {% endif %}
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="auth-message success-message">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <form
+            method="POST"
+            action="{% url 'signup' %}"
+            class="auth-form"
+            id="signupForm"
+        >
+            {% csrf_token %}
+
+            <div class="auth-field">
+                <label for="fullName">Full name</label>
+                <input
+                    type="text"
+                    id="fullName"
+                    name="full_name"
+                    placeholder="Enter your full name"
+                    autocomplete="name"
+                    maxlength="150"
+                    required
+                >
+            </div>
+
+            <div class="auth-field">
+                <label for="signupEmail">Email address</label>
+                <input
+                    type="email"
+                    id="signupEmail"
+                    name="username"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    maxlength="254"
+                    required
+                >
+            </div>
+
+            <div class="auth-field">
+                <label for="signupPassword">Password</label>
+
+                <div class="password-wrapper">
+                    <input
+                        type="password"
+                        id="signupPassword"
+                        name="password1"
+                        placeholder="Create a password"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="password-toggle"
+                        data-toggle-password="signupPassword"
+                        aria-label="Show password"
+                    >Show</button>
+                </div>
+            </div>
+
+            <div class="auth-field">
+                <label for="confirmPassword">Confirm password</label>
+
+                <div class="password-wrapper">
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="password2"
+                        placeholder="Enter password again"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="password-toggle"
+                        data-toggle-password="confirmPassword"
+                        aria-label="Show password"
+                    >Show</button>
+                </div>
+
+                <p id="passwordError" class="password-error" aria-live="polite"></p>
+            </div>
+
+            <button type="submit" class="auth-submit">
+                Create Account <span>→</span>
+            </button>
+        </form>
+
+        <div class="auth-divider"><span>OR</span></div>
+
+        <p class="auth-switch">
+            Already have an account?
+            <a href="{% url 'login' %}">Sign in</a>
+        </p>
+
+    </section>
+
+    <p class="auth-bottom-note">
+        TracBee · Your career discovery platform.
+    </p>
+
+</main>
+
+<script src="{% static 'auth.js' %}" defer></script>
+</body>
+</html>

@@ -1,0 +1,375 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ job.title }} | TracBee</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #08110e;
+            color: #e5e7eb;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #34d399;
+            text-decoration: none;
+            margin-bottom: 22px;
+        }
+
+        .back-link:hover {
+            color: #a7f3d0;
+        }
+
+        .card {
+            background: #111c19;
+            border: 1px solid #263b32;
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .label {
+            color: #34d399;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 30px;
+            line-height: 1.4;
+            margin: 14px 0;
+        }
+
+        .company {
+            color: #a7b5ae;
+            font-size: 19px;
+        }
+
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 25px 0;
+        }
+
+        .meta span,
+        .skill-tag {
+            background: #1b3027;
+            color: #a7f3d0;
+            padding: 9px 13px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .section {
+            border-top: 1px solid #263b32;
+            padding: 23px 0;
+        }
+
+        .section h2 {
+            color: #34d399;
+            font-size: 19px;
+            margin: 0 0 18px;
+        }
+
+        .salary {
+            font-size: 17px;
+            color: #e5e7eb;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .description-content {
+            color: #cbd5d1;
+            line-height: 1.85;
+            overflow-wrap: anywhere;
+            font-size: 15px;
+        }
+
+        .description-content .job-heading {
+            color: #34d399;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 28px 0 12px;
+            line-height: 1.5;
+        }
+
+        .description-content .job-paragraph {
+            margin: 0 0 16px;
+            line-height: 1.85;
+        }
+
+        .description-content ul {
+            padding-left: 25px;
+            margin: 10px 0 22px;
+        }
+
+        .description-content li {
+            padding-left: 5px;
+            margin-bottom: 12px;
+            line-height: 1.8;
+        }
+
+        .description-content li::marker {
+            color: #34d399;
+        }
+
+        .description-content strong {
+            color: #fff;
+        }
+
+        details {
+            margin-top: 18px;
+            border: 1px solid #263b32;
+            border-radius: 10px;
+            padding: 17px;
+            background: #0b1712;
+        }
+
+        summary {
+            color: #34d399;
+            cursor: pointer;
+            font-weight: bold;
+            list-style-position: inside;
+        }
+
+        summary:hover {
+            color: #a7f3d0;
+        }
+
+        .full-description {
+            margin-top: 22px;
+            padding-top: 18px;
+            border-top: 1px solid #263b32;
+        }
+
+        .source {
+            color: #a7b5ae;
+            font-size: 14px;
+        }
+
+        .apply-button {
+            display: inline-block;
+            background: #10b981;
+            color: #06251a;
+            padding: 13px 21px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 12px;
+            transition: 0.2s;
+        }
+
+        .apply-button:hover {
+            background: #34d399;
+            transform: translateY(-2px);
+        }
+
+        @media(max-width: 600px) {
+            .container {
+                margin: 15px auto;
+                padding: 12px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .company {
+                font-size: 17px;
+            }
+
+            .meta {
+                gap: 8px;
+            }
+
+            .meta span {
+                font-size: 12px;
+            }
+
+            .description-content {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <a href="{% url 'jobs' %}" class="back-link">
+        ← Back to Jobs
+    </a>
+
+    <div class="card">
+
+        <span class="label">TRACBEE · JOB OPPORTUNITY</span>
+
+        <h1>{{ job.title }}</h1>
+
+        <div class="company">
+            {{ job.company }}
+        </div>
+
+        <div class="meta">
+            <span>📍 {{ job.location }}</span>
+
+            <span>
+                💼 {{ job.get_employment_type_display|default:"Not specified" }}
+            </span>
+
+            <span>
+                📅 {{ job.posted_at|default:"Date not available" }}
+            </span>
+        </div>
+
+        <!-- SALARY -->
+
+        <div class="section">
+
+            <h2>Salary Information</h2>
+
+            <div class="salary">
+
+                {% if job.salary_min or job.salary_max %}
+
+                    {{ job.currency|default:"" }}
+
+                    {{ job.salary_min|default:"Not specified" }}
+
+                    – {{ job.salary_max|default:"Not specified" }}
+
+                {% else %}
+
+                    Salary not disclosed by employer
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        <!-- SKILLS -->
+
+        <div class="section">
+
+            <h2>Required Skills</h2>
+
+            <div class="skills">
+
+                {% for skill in job.skills.all %}
+
+                    <span class="skill-tag">
+                        {{ skill.name }}
+                    </span>
+
+                {% empty %}
+
+                    <span class="description-content">
+                        Skills not available for this posting.
+                    </span>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+        <!-- JOB DESCRIPTION -->
+
+        <div class="section">
+
+            <h2>About This Role</h2>
+
+            {% if job.description %}
+
+                <div
+                    id="jobDescriptionPreview"
+                    class="description-content"
+                    data-description="{{ job.description|truncatechars:650|escape }}"
+                ></div>
+
+                {% if job.description|length > 650 %}
+
+                    <details id="fullDescriptionDetails">
+
+                        <summary>
+                            Read Full Job Description ↓
+                        </summary>
+
+                        <div
+                            id="fullJobDescription"
+                            class="description-content full-description"
+                            data-description="{{ job.description|escape }}"
+                        ></div>
+
+                    </details>
+
+                {% endif %}
+
+            {% else %}
+
+                <p class="description-content">
+                    Job description is not available.
+                </p>
+
+            {% endif %}
+
+        </div>
+
+        <!-- ORIGINAL SOURCE -->
+
+        <div class="section">
+
+            <p class="source">
+                Job source: {{ job.source|default:"Not specified" }}
+            </p>
+
+            {% if job.source_url %}
+
+                <a
+                    href="{{ job.source_url }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="apply-button"
+                >
+                    View Original Job & Apply ↗
+                </a>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{% static 'job_detail.js' %}"></script>
+
+</body>
+</html>

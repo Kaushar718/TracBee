@@ -1,0 +1,224 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TracBee | Skill Analytics</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'analysis.css' %}">
+
+    <link rel="stylesheet" href="/static/tracbee-theme.css">
+
+    <style>
+        .skill-demand-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-demand-list li {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 14px 8px;
+            border-bottom: 1px solid rgba(128,128,128,0.2);
+        }
+
+        .skill-demand-list span {
+            color: #94a3b8;
+            text-align: right;
+        }
+
+        .data-note {
+            font-size: 13px;
+            color: #94a3b8;
+            margin-top: 12px;
+        }
+
+        #analysisStatus {
+            margin: 15px 0;
+        }
+
+        @media print {
+            .navbar, .export-btn {
+                display: none !important;
+            }
+
+            body {
+                background: white !important;
+                color: black !important;
+            }
+
+            .dashboard {
+                width: 100% !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">TracBee</div>
+
+        <ul class="nav-links">
+            <li><a href="/home/">Home</a></li>
+            <li><a href="/about/">About</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main class="dashboard">
+
+    <header class="page-header">
+        <div>
+            <h1>Skill Analytics Dashboard</h1>
+            <p>Database-powered skill demand analysis</p>
+        </div>
+
+        <button type="button" class="export-btn" id="exportBtn">
+            Export Report
+        </button>
+    </header>
+
+    <div class="search-summary">
+
+      
+<form method="GET" action="/analysis/" class="analysis-filters">
+
+    <div class="analysis-filter-field">
+        <label for="skillFilter">Focus Skill</label>
+        <input
+            type="text"
+            id="skillFilter"
+            name="skill"
+            placeholder="Example: Python"
+        >
+    </div>
+
+    <div class="analysis-filter-field">
+        <label for="yearFilter">Year</label>
+        <input
+            type="number"
+            id="yearFilter"
+            name="year"
+            min="1900"
+            max="2100"
+            placeholder="Example: 2025"
+        >
+    </div>
+
+    <div class="analysis-filter-field">
+        <label for="locationFilter">Location</label>
+        <input
+            type="text"
+            id="locationFilter"
+            name="location"
+            placeholder="Example: Bengaluru"
+        >
+    </div>
+
+    <button type="submit" class="export-btn">
+        Apply Filters
+    </button>
+
+    <a href="/analysis/">Clear Filters</a>
+
+</form>
+
+        <p>
+            <strong>Skill:</strong>
+            <span id="skillName">Loading...</span>
+
+            &nbsp; | &nbsp;
+
+            <strong>Year:</strong>
+            <span id="yearName">Loading...</span>
+
+            &nbsp; | &nbsp;
+
+            <strong>Location:</strong>
+            <span id="locationName">Loading...</span>
+        </p>
+    </div>
+
+    <p id="analysisStatus" aria-live="polite">
+        Loading analytics...
+    </p>
+
+    <section class="stats-grid">
+
+        <div class="stat-card card">
+            <h4>Total Job Postings</h4>
+            <h2 id="totalJobs">--</h2>
+            <p>Matching database records</p>
+        </div>
+
+        <div class="stat-card card2">
+            <h4>Skills Tracked</h4>
+            <h2 id="totalSkills">--</h2>
+            <p>Distinct matching skills</p>
+        </div>
+
+        <div class="stat-card card3">
+            <h4 id="focusSkillLabel">Selected Skill Jobs</h4>
+            <h2 id="focusSkillJobs">--</h2>
+            <p>Matching job postings</p>
+        </div>
+
+        <div class="stat-card card4">
+            <h4>Most Demanded Skill</h4>
+            <h2 id="topSkill">--</h2>
+            <p id="topSkillCount">Waiting for data</p>
+        </div>
+
+    </section>
+
+    <section class="analytics-grid">
+
+        <div class="chart-card large">
+            <div class="chart-header">
+                <h3>Job Postings by Skill</h3>
+            </div>
+
+            <canvas id="trendChart"></canvas>
+
+            <p class="data-note">
+                Counts represent matching job postings in the sample dataset.
+            </p>
+        </div>
+
+        <div class="chart-card large">
+            <h3>Skill Demand Breakdown</h3>
+
+            <ul id="skillDemandList" class="skill-demand-list">
+                <li>Loading skills...</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <section class="insight-card">
+        <h3>Key Insights</h3>
+
+        <ul id="insightsList">
+            <li>Waiting for analysis data...</li>
+        </ul>
+
+        <p class="data-note" id="dataNotice">
+            Dataset information will appear here.
+        </p>
+    </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{% static 'analysis.js' %}"></script>
+
+</body>
+</html>

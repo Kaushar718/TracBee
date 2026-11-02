@@ -1,0 +1,88 @@
+/* ===== Body & Container ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.dashboard-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* ===== Header ===== */
+.dashboard-header h1 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.dashboard-header h1 span {
+  color: #23c36a;
+}
+
+/* ===== Cards Container ===== */
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* ===== Card Styling ===== */
+.card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 25px 20px;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.card h2 {
+  margin-bottom: 20px;
+  color: #23c36a;
+}
+
+/* ===== Table Styling ===== */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+}
+
+table th, table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+table th {
+  background: rgba(35, 195, 106, 0.6);
+  border-radius: 8px;
+  color: #fff;
+}
+
+table tr:nth-child(even) {
+  background: rgba(255,255,255,0.05);
+}
+
+.empty-state {
+  text-align: center;
+  color: #bbb;
+}
+
+/* ===== Responsive ===== */
+@media screen and (min-width: 900px) {
+  .cards-container {
+    flex-direction: row;
+    gap: 20px;
+  }
+  .card {
+    flex: 1;
+  }
+}

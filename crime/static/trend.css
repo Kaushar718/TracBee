@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #020617);
+    color: #e2e8f0;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(15px);
+}
+
+.navbar ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #94a3b8;
+}
+
+.navbar a.active,
+.navbar a:hover {
+    color: #23c36a;
+}
+
+/* HERO */
+.report-hero {
+    text-align: center;
+    padding: 70px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.report-hero h1 {
+    color: #23c36a;
+    font-size: 38px;
+}
+
+/* SKILL GRID */
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 60px 80px;
+}
+
+.skill-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.section-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.growth { color: #22c55e; }
+.stable { color: #3b82f6; }
+.decline { color: #ef4444; }
+
+/* SKILL CARD */
+.skill-card {
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    border-radius: 18px;
+    backdrop-filter: blur(15px);
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+}
+
+.growth-border { border-left: 4px solid #22c55e; }
+.stable-border { border-left: 4px solid #3b82f6; }
+.decline-border { border-left: 4px solid #ef4444; }
+
+.tag {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 8px;
+}
+
+.positive { background: rgba(34,197,94,0.2); color: #22c55e; }
+.neutral { background: rgba(59,130,246,0.2); color: #3b82f6; }
+.negative { background: rgba(239,68,68,0.2); color: #ef4444; }
+
+/* INSIGHT GRID */
+.insight-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 60px 80px;
+}
+
+.insight-card {
+    background: rgba(255,255,255,0.05);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+}
+
+.footer {
+    text-align: center;
+    padding: 40px;
+    color: #64748b;
+}
+
+/* RESPONSIVE */
+@media(max-width: 1000px) {
+    .skill-grid {
+        grid-template-columns: 1fr;
+    }
+    .insight-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* INSIGHT HEADER */
+.insight-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.insight-icon {
+    font-size: 20px;
+}
+
+/* Hiring Hotspots Color Theme */
+.hotspot {
+    border-left: 5px solid #f59e0b;
+    background: linear-gradient(145deg, rgba(245,158,11,0.08), rgba(255,255,255,0.05));
+}
+
+.hotspot h2 {
+    color: #fbbf24;
+}
+
+/* Future Outlook Color Theme */
+.outlook {
+    border-left: 5px solid #8b5cf6;
+    background: linear-gradient(145deg, rgba(139,92,246,0.08), rgba(255,255,255,0.05));
+}
+
+.outlook h2 {
+    color: #a78bfa;
+}

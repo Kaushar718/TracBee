@@ -1,0 +1,231 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080d19">
+    <title>Learning Paths | TracBee</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'courses.css' %}">
+    <link rel="stylesheet" href="{% static 'tracbee-theme.css' %}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/home/" class="logo">Trac<span>Bee</span></a>
+            <div class="nav-links">
+                <a href="/home/">Home</a>
+                <a href="/analysis/">Analysis</a>
+                <a href="/jobs/">Jobs</a>
+                <a href="/about/">About</a>
+                <a href="/course/" class="nav-active">Courses</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="courses-hero">
+            <div class="hero-content">
+                <span class="eyebrow">LEARN • GROW • SUCCEED</span>
+                <h1>Build skills that move your <span>career forward.</span></h1>
+                <p>
+                    Explore in-demand technology skills, discover learning paths,
+                    and prepare yourself for the opportunities of tomorrow.
+                </p>
+                <a href="#popular" class="primary-btn">Explore Learning Paths <span>→</span></a>
+            </div>
+
+            <div class="hero-visual">
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+                <div class="learning-card">
+                    <div class="learning-icon">✦</div>
+                    <span class="learning-label">YOUR NEXT STEP</span>
+                    <h3>Learn something<br>valuable today.</h3>
+                    <div class="learning-line"><span></span></div>
+                    <div class="learning-footer">
+                        <span>Skills for the future</span>
+                        <strong>2026</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="course-intro" id="popular">
+            <div>
+                <span class="section-label">START LEARNING</span>
+                <h2>Explore learning paths</h2>
+                <p>Discover topics that match today's technology and career landscape.</p>
+            </div>
+            <div class="course-count"><strong>11</strong><span>Learning topics</span></div>
+        </section>
+
+        <section class="course-section">
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">POPULAR CHOICES</span>
+                    <h2>Most Popular</h2>
+                </div>
+                <span class="section-note">Build your foundation</span>
+            </div>
+
+            <div class="course-grid">
+                <article class="course-card">
+                    <img src="https://images.pexels.com/photos/1181275/pexels-photo-1181275.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Cloud computing workspace" loading="lazy">
+                    <div class="course-body">
+                        <span class="course-tag">Cloud Computing</span>
+                        <h3>AWS Cloud Practitioner</h3>
+                        <p>Understand AWS architecture, core services, and cloud scalability principles.</p>
+                        <a class="course-link" href="https://www.coursera.org/search?query=AWS%20Cloud%20Practitioner" target="_blank" rel="noopener noreferrer">Explore learning <span>↗</span></a>
+                    </div>
+                </article>
+
+                <article class="course-card">
+                    <img src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Artificial intelligence technology" loading="lazy">
+                    <div class="course-body">
+                        <span class="course-tag">Artificial Intelligence</span>
+                        <h3>AI & Machine Learning</h3>
+                        <p>Explore machine learning concepts, model training, and practical AI applications.</p>
+                        <a class="course-link" href="https://www.coursera.org/search?query=AI%20Machine%20Learning" target="_blank" rel="noopener noreferrer">Explore learning <span>↗</span></a>
+                    </div>
+                </article>
+
+                <article class="course-card">
+                    <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Data analytics workspace" loading="lazy">
+                    <div class="course-body">
+                        <span class="course-tag">Analytics</span>
+                        <h3>Data Analytics</h3>
+                        <p>Learn to analyze datasets using SQL, Power BI, and Python visualization tools.</p>
+                        <a class="course-link" href="https://www.coursera.org/search?query=Data%20Analytics" target="_blank" rel="noopener noreferrer">Explore learning <span>↗</span></a>
+                    </div>
+                </article>
+
+                <article class="course-card">
+                    <img src="https://images.pexels.com/photos/5380653/pexels-photo-5380653.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Cybersecurity workspace" loading="lazy">
+                    <div class="course-body">
+                        <span class="course-tag">Security</span>
+                        <h3>Cybersecurity Essentials</h3>
+                        <p>Understand network security, risk management, and ethical hacking fundamentals.</p>
+                        <a class="course-link" href="https://www.coursera.org/search?query=Cybersecurity" target="_blank" rel="noopener noreferrer">Explore learning <span>↗</span></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="course-section">
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">CAREER-READY SKILLS</span>
+                    <h2>Trending Now</h2>
+                </div>
+                <span class="section-note">Develop practical skills</span>
+            </div>
+
+            <div class="course-grid">
+                <article class="course-card">
+                    <img src="https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Web development" loading="lazy">
+                    <div class="course-body">
+                        <span class="course-tag">Development</span>
+                        <h3>Full Stack Web Development</h3>
+                        <p>Explore frontend and backend development with React, Node.js, and databases.</p>
+                        <a class="course-link" href="https://www.coursera.org/search?query=Full%20Stack%20Web%20Development" target="_blank" rel="noopener noreferrer">Explore learning <span>↗</span></a>
+                    </div>
+                </article>
+
+                <article class="course-card">
+                    <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Frontend development" loading="lazy">
+                    <div class="course-body">
+                        <span class="course-tag">Frontend</span>
+                        <h3>React & Front-End Engineering</h3>
+                        <p>Build interactive user interfaces with React, state management, and responsive design.</p>
+                        <a class="course-link" href="https://www.coursera.org/search?query=React%20Frontend%20Development" target="_blank" rel="noopener noreferrer">Explore learning <span>↗</span></a>
+                    </div>
+                </article>
+
+                <article class="course-card">
+                    <img src="https://images.pexels.com/photos/1181358/pexels-photo-1181358.jpeg?auto=compress&cs=tinysrgb&w=800" alt="DevOps technology" loading="lazy">
+                    <div class="course-body">
+                        <span class="course-tag">Automation</span>
+                        <h3>DevOps with Docker & Kubernetes</h3>
+                        <p>Discover containers, CI/CD pipelines, and modern deployment workflows.</p>
+                        <a class="course-link" href="https://www.coursera.org/search?query=DevOps%20Docker%20Kubernetes" target="_blank" rel="noopener noreferrer">Explore learning <span>↗</span></a>
+                    </div>
+                </article>
+
+                <article class="course-card">
+                    <img src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Java programming" loading="lazy">
+                    <div class="course-body">
+                        <span class="course-tag">Programming</span>
+                        <h3>Java Programming Mastery</h3>
+                        <p>Strengthen your programming foundation with Java and object-oriented concepts.</p>
+                        <a class="course-link" href="https://www.coursera.org/search?query=Java%20Programming" target="_blank" rel="noopener noreferrer">Explore learning <span>↗</span></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="course-section emerging-section">
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">WHAT'S NEXT</span>
+                    <h2>Emerging Skills</h2>
+                </div>
+                <span class="section-note">Explore new technologies</span>
+            </div>
+
+            <div class="course-grid three-columns">
+                <article class="course-card">
+<img
+    src="https://images.pexels.com/photos/844124/pexels-photo-844124.jpeg?auto=compress&cs=tinysrgb&w=800"
+    alt="Blockchain and Web3 technology"
+    loading="lazy"
+>                    <div class="course-body">
+                        <span class="course-tag">Innovation</span>
+                        <h3>Blockchain & Web3</h3>
+                        <p>Explore decentralized systems, smart contracts, and blockchain fundamentals.</p>
+                        <a class="course-link" href="https://www.coursera.org/search?query=Blockchain%20Web3" target="_blank" rel="noopener noreferrer">Explore learning <span>↗</span></a>
+                    </div>
+                </article>
+
+                <article class="course-card">
+                    <img src="https://images.pexels.com/photos/1181288/pexels-photo-1181288.jpeg?auto=compress&cs=tinysrgb&w=800" alt="AI prompt engineering" loading="lazy">
+                    <div class="course-body">
+                        <span class="course-tag">AI Tools</span>
+                        <h3>AI Prompt Engineering</h3>
+                        <p>Learn to write clear, effective prompts for modern generative AI tools.</p>
+                        <a class="course-link" href="https://www.coursera.org/search?query=Prompt%20Engineering" target="_blank" rel="noopener noreferrer">Explore learning <span>↗</span></a>
+                    </div>
+                </article>
+
+                <article class="course-card">
+                    <img src="https://images.pexels.com/photos/3183172/pexels-photo-3183172.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Cloud security team" loading="lazy">
+                    <div class="course-body">
+                        <span class="course-tag">Cloud Security</span>
+                        <h3>Cloud Security Specialist</h3>
+                        <p>Understand cloud infrastructure security and compliance across major platforms.</p>
+                        <a class="course-link" href="https://www.coursera.org/search?query=Cloud%20Security" target="_blank" rel="noopener noreferrer">Explore learning <span>↗</span></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="learning-cta">
+            <span class="section-label">YOUR CAREER JOURNEY</span>
+            <h2>Every skill learned is a step forward.</h2>
+            <p>Use TracBee insights to explore skills that match your career goals.</p>
+            <a href="/analysis/" class="primary-btn">Explore Skill Analytics <span>→</span></a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <a href="/home/" class="logo">Trac<span>Bee</span></a>
+        <p>© 2026 TracBee. Empowering skills for tomorrow.</p>
+    </footer>
+</body>
+</html>
