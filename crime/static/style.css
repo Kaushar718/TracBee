@@ -7,10 +7,13 @@
 }
 
 body {
-  background-image: url("w2.jpg");
+  background:
+    radial-gradient(circle at 50% 20%, #176044 0%, transparent 55%),
+    linear-gradient(135deg, #071b16, #102d24);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
   margin: 0;
 }
 
@@ -85,8 +88,10 @@ body {
 .hero {
   position: relative;
   height: 90vh;
-  background-image: url("w2.jpg");
-  background-size: 110%;
+  background:
+    radial-gradient(circle at 50% 20%, #176044 0%, transparent 55%),
+    linear-gradient(135deg, #071b16, #102d24);
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
@@ -97,7 +102,6 @@ body {
   padding-top: 120px;
   padding-bottom: 150px;
 }
-
 .overlay {
   position: absolute;
   top: 0;
