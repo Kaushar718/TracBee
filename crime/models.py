@@ -28,7 +28,7 @@ class JobPosting(models.Model):
 
     title = models.CharField(max_length=200)
     company = models.CharField(max_length=150)
-    location = models.CharField(max_length=120, db_index=True)
+    location = models.CharField(max_length=150, db_index=True)
 
     employment_type = models.CharField(
         max_length=30,
